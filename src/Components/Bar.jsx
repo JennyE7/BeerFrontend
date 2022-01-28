@@ -15,7 +15,7 @@ const Bar = () => {
 
     const getData = () => {
         console.log("button clicked");
-        axios.get("http://localhost:5015/beer/getAll")
+        axios.get("http://18.135.100.164:5015/beer/getAll")
         .then((res) => {
             console.log(res);
             setBeerData(res.data);
@@ -30,7 +30,7 @@ const Bar = () => {
 
     const getById = (id) => {
 
-        axios.get(`http://localhost:5015/beer/get/${id}`)
+        axios.get(`http://18.135.100.164:5015/beer/get/${id}`)
         .then((response) => {
             setBeerData([response.data]);
             setLoaded(true);
@@ -41,7 +41,7 @@ const Bar = () => {
     };
 
     const deleteBeer = (id) => {
-        axios.delete(`http://localhost:5015/beer/delete/${id}`)
+        axios.delete(`http://18.135.100.164:5015/beer/delete/${id}`)
         .then((res) => {
             getData();
             alert(res.data);
